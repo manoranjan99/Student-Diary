@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="@drawable/custom_ripple"
+        android:clickable="true"
+    android:focusable="true">
+
+    <TextView
+        android:id="@+id/name_of_subject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:text="@string/subject" />
+
+    <TextView
+        android:id="@+id/time_of_subject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="25dp"
+        android:gravity="center"
+        android:text="@string/_8_00_am"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+
+</RelativeLayout>
