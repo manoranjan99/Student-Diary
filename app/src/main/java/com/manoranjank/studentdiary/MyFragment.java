@@ -52,13 +52,12 @@ public class MyFragment extends Fragment implements FragmentListener {
         View view = inflater.inflate(R.layout.fragment_my, container, false);
         ButterKnife.bind(this, view);
         fragmentName = getArguments().getString(ARG_PARAM);
-        timeTableAdapter = new TimeTableAdapter(subjects);
+        timeTableAdapter = new TimeTableAdapter(subjects, getActivity());
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         list.setLayoutManager(mLayoutManager);
         list.setItemAnimator(new DefaultItemAnimator());
         list.addItemDecoration(new DividerItemDecoration(list.getContext(), ((LinearLayoutManager) mLayoutManager).getOrientation()));
         list.setAdapter(timeTableAdapter);
-
         return view;
     }
 
@@ -70,6 +69,13 @@ public class MyFragment extends Fragment implements FragmentListener {
         timeTableAdapter.notifyDataSetChanged();
 
     }
+
+    @Override
+    public void updateList(int i) {
+        subjects.remove(i);
+        timeTableAdapter.notifyDataSetChanged();
+    }
+
 
     @Override
     public String getFragmentName() {

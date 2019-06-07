@@ -366,6 +366,10 @@ void firstTtime()
             startActivity(serpercentage);
 
         } else if (id == R.id.nav_send) {
+            final Dialog about = new Dialog(this);
+            about.setContentView(R.layout.about);
+            about.setTitle("About");
+            about.show();
 
         }
 

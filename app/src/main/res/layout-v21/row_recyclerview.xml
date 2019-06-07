@@ -4,6 +4,7 @@
     android:layout_height="100dp"
     android:background="@drawable/custom_ripple"
         android:clickable="true"
+    android:id="@+id/row_layout"
     android:focusable="true">
 
     <TextView

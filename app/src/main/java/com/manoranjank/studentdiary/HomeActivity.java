@@ -15,6 +15,7 @@ import android.view.MenuItem;
 
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 
@@ -34,7 +35,7 @@ public class HomeActivity extends AppCompatActivity implements ListPopulateHandl
     public static ListPopulateHandle listPopulateHandle;
     public List<Subject> dbList = new ArrayList<>();
 
-    public List<FragmentListener> fragmentListeners = new ArrayList<>();
+    public static List<FragmentListener> fragmentListeners = new ArrayList<>();
     public final List<Fragment> fragments = getFragments();
     private myDbAdapter dbAdapter;
     public DatabaseFetchTask databaseFetchTask;
@@ -55,7 +56,32 @@ public class HomeActivity extends AppCompatActivity implements ListPopulateHandl
 
         final MyPagerAdapter myPagerAdapter = new MyPagerAdapter(getSupportFragmentManager(), fragments);
         viewPager.setAdapter(myPagerAdapter);
-        viewPager.setCurrentItem(1);
+        Calendar calendar = Calendar.getInstance();
+        int day = calendar.get(Calendar.DAY_OF_WEEK);
+
+        switch (day) {
+            case Calendar.SUNDAY:
+                viewPager.setCurrentItem(7);
+                break;
+            case Calendar.MONDAY:
+                viewPager.setCurrentItem(1);
+                break;
+            case Calendar.TUESDAY:
+                viewPager.setCurrentItem(2);
+                break;
+            case Calendar.WEDNESDAY:
+                viewPager.setCurrentItem(3);
+                break;
+            case Calendar.THURSDAY:
+                viewPager.setCurrentItem(4);
+                break;
+            case Calendar.FRIDAY:
+                viewPager.setCurrentItem(5);
+                break;
+            case Calendar.SATURDAY:
+                viewPager.setCurrentItem(6);
+                break;
+        }
         viewPager.setOffscreenPageLimit(1000);
 
 

@@ -23,4 +23,13 @@
     <string name="name_of_the_subject">Name of the subject</string>
     <string name="_8_00_am">8:30 AM</string>
     <string name="subject">SUBJECT</string>
+    <string name="contributors">Developers,Contributors</string>
+    <string name="names">Vicky Daniel</string>
+    <string name="name2">Manoranjan K</string>
+    <string name="more">Non-Profit app,Contains no ads.
+        For more info Search Creativoid in Google Play</string>
+
+
+
+
 </resources>

@@ -32,20 +32,11 @@ public class myDbAdapter {
 
     }
 
-    public int delete(String name) {
+    public int delete(String name, String day) {
         SQLiteDatabase db = myHelper.getWritableDatabase();
-        String[] whereArgs = {name};
+        String[] whereArgs = {name, day};
 
-        int count = db.delete(myDbHelper.TABLE_NAME, myDbHelper.NAME + " = ?", whereArgs);
-        return count;
-    }
-
-    public int updateName(String oldName, String newName) {
-        SQLiteDatabase db = myHelper.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(myDbHelper.NAME, newName);
-        String[] whereArgs = {oldName};
-        int count = db.update(myDbHelper.TABLE_NAME, contentValues, myDbHelper.NAME + " = ?", whereArgs);
+        int count = db.delete(myDbHelper.TABLE_NAME, myDbHelper.NAME + " = ? AND " + myDbHelper.DAY + " = ?", whereArgs);
         return count;
     }
 
